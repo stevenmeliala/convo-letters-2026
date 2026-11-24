@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { CardReveal } from "../../components/CardReveal";
+import { MemoriesGallery } from "../../components/MemoriesGallery";
 import { CrossFiligree, KeepsakeFooter, Masthead } from "../../components/Stationery";
 import dataset from "../../data/cards.json";
+import { MEMORY_PHOTOS, MEMORY_VIDEOS } from "../../data/memories";
 
 export const dynamicParams = false;
 
@@ -41,21 +43,11 @@ export default async function GraduateCard({ params }) {
             </article>
           ))}
         </div>
-        {dataset.memories.length > 0 && (
-          <details className="memories">
-            <summary>Shared PKA Group Memories</summary>
-            <ul>
-              {dataset.memories.map(({ sender, url }, index) => (
-                <li key={index}>
-                  <a href={url} target="_blank" rel="noreferrer">
-                    Open memories from {sender}{" "}
-                    <span className="sr-only">(opens in a new tab)</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </details>
-        )}
+        <MemoriesGallery
+          photos={MEMORY_PHOTOS}
+          videos={MEMORY_VIDEOS}
+          driveLinks={dataset.memories}
+        />
       </CardReveal>
       <KeepsakeFooter />
     </div>

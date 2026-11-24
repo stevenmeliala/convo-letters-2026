@@ -525,10 +525,243 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* Shared PKA Memories Photo & Video Gallery */
+.memories-gallery {
+  margin-top: clamp(2.5rem, 6vw, 3.75rem);
+  padding-top: clamp(2rem, 5vw, 3rem);
+  border-top: 1px solid var(--rule-strong);
+}
+
+.memories-gallery-header {
+  text-align: center;
+  margin-bottom: clamp(1.4rem, 3.5vw, 2.2rem);
+}
+
+.memories-ornament {
+  display: block;
+  margin: 0 auto 0.5rem;
+  color: var(--crimson-ink);
+}
+
+.memories-gallery-header h2 {
+  margin: 0 0 0.4rem;
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 1.15rem + 2vw, 2.35rem);
+  font-weight: 470;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.memories-gallery-header p {
+  margin: 0 auto;
+  max-inline-size: 44ch;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-wrap: pretty;
+}
+
+.photo-mosaic {
+  columns: 2;
+  column-gap: clamp(0.85rem, 2.5vw, 1.25rem);
+}
+
+@media (max-width: 34rem) {
+  .photo-mosaic {
+    columns: 1;
+  }
+}
+
+.photo-card {
+  break-inside: avoid;
+  margin: 0 0 clamp(0.85rem, 2.5vw, 1.25rem);
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.5rem 0.7rem;
+  box-shadow: 0 5px 15px #1211130e;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.photo-card:hover {
+  border-color: var(--crimson-ink);
+  box-shadow: 0 8px 22px #1211131a;
+}
+
+.photo-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--card-frame);
+  border-radius: 0.15rem;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.photo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .photo-image {
+    transition: transform 280ms ease;
+  }
+
+  .photo-trigger:hover .photo-image {
+    transform: scale(1.02);
+  }
+}
+
+.photo-caption {
+  margin-top: 0.55rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.86rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.video-memories {
+  margin-top: clamp(0.75rem, 2vw, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.video-card {
+  margin: 0;
+  width: min(100%, 21rem);
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--crimson);
+  border-radius: 0.25rem;
+  padding: 0.55rem 0.55rem 0.75rem;
+  box-shadow: 0 6px 18px #12111310;
+}
+
+.memory-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.15rem;
+  background: var(--ink);
+}
+
+/* Native <dialog> Photo Lightbox */
+.photo-lightbox {
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--rule-strong);
+  border-radius: 0.35rem;
+  background: var(--paper);
+  color: var(--ink);
+  max-inline-size: min(94vw, 60rem);
+  max-block-size: 92svh;
+  box-shadow: 0 22px 54px #00000070;
+}
+
+.photo-lightbox[open] {
+  display: grid;
+}
+
+.photo-lightbox:modal {
+  overscroll-behavior: contain;
+}
+
+.photo-lightbox::backdrop {
+  background: #121113cc;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.lightbox-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(0.85rem, 2.5vw, 1.25rem);
+}
+
+.lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.lightbox-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.lightbox-count {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.lightbox-close,
+.lightbox-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.6rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--ink);
+  border-radius: 0.25rem;
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.lightbox-close:hover,
+.lightbox-nav-btn:hover {
+  background: var(--crimson-ink);
+  border-color: var(--crimson-ink);
+  color: #fffdf9;
+}
+
+.lightbox-stage {
+  display: grid;
+  place-items: center;
+  background: var(--card-frame);
+  border: 1px solid var(--rule);
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+}
+
+.lightbox-image {
+  display: block;
+  max-inline-size: 100%;
+  max-block-size: 68svh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 /* Shared PKA Group Memories Accordion */
 .memories {
-  margin-top: 2.25rem;
-  border-block: 1px solid var(--rule-strong);
+  margin-top: 1.75rem;
+  border-block: 1px solid var(--rule);
 }
 
 .memories summary {
@@ -632,7 +865,10 @@ body {
   .envelope-seal,
   .note,
   .blessing-verse,
-  .open-button {
+  .open-button,
+  .photo-card,
+  .video-card,
+  .photo-lightbox {
     border: 1px solid CanvasText;
   }
 
