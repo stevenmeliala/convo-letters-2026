@@ -3,7 +3,7 @@ import { CardReveal } from "../../components/CardReveal";
 import { MemoriesGallery } from "../../components/MemoriesGallery";
 import { CrossFiligree, KeepsakeFooter, Masthead } from "../../components/Stationery";
 import dataset from "../../data/cards.json";
-import { MEMORIES_EXCLUDED_SLUGS, MEMORY_PHOTOS, MEMORY_VIDEOS } from "../../data/memories";
+import { MEMORY_PHOTOS, MEMORY_VIDEOS } from "../../data/memories";
 
 export const dynamicParams = false;
 
@@ -23,7 +23,6 @@ export default async function GraduateCard({ params }) {
   const { slug } = await params;
   if (!Object.hasOwn(dataset.cards, slug)) notFound();
   const { name, messages } = dataset.cards[slug];
-  const showMemories = !MEMORIES_EXCLUDED_SLUGS.has(slug);
 
   return (
     <div className="stationery-page">
@@ -44,9 +43,7 @@ export default async function GraduateCard({ params }) {
             </article>
           ))}
         </div>
-        {showMemories && (
-          <MemoriesGallery photos={MEMORY_PHOTOS} videos={MEMORY_VIDEOS} />
-        )}
+        <MemoriesGallery photos={MEMORY_PHOTOS} videos={MEMORY_VIDEOS} />
       </CardReveal>
       <KeepsakeFooter />
     </div>

@@ -1,6 +1,25 @@
-export const MEMORIES_EXCLUDED_SLUGS = new Set(["ling-hui", "tian-kuan", "joseph-ng"]);
-
 export const MEMORY_PHOTOS = [
+  {
+    src: "/memories/anna-01.jpg",
+    width: 1080,
+    height: 810,
+    sender: "Anna",
+    alt: "Three PKA sisters smiling brightly together in a sunny outdoor selfie outside church",
+  },
+  {
+    src: "/memories/chinese-cg-01.jpg",
+    width: 1080,
+    height: 810,
+    sender: "Chinese CG",
+    alt: "Chinese CG fellowship members smiling and posing with finger hearts and peace signs in a lecture room",
+  },
+  {
+    src: "/memories/anna-03.jpg",
+    width: 810,
+    height: 1080,
+    sender: "Anna",
+    alt: "Five PKA members in matching navy PKA shirts and lanyards smiling on a sunny lawn",
+  },
   {
     src: "/memories/oscar-01.jpg",
     width: 1080,
@@ -16,11 +35,32 @@ export const MEMORY_PHOTOS = [
     alt: "PKA friends laughing and posing together in front of a colourful ribbon backdrop",
   },
   {
+    src: "/memories/chinese-cg-02.jpg",
+    width: 1080,
+    height: 810,
+    sender: "Chinese CG",
+    alt: "Chinese CG members holding hands and praying together during cell group",
+  },
+  {
+    src: "/memories/anna-02.jpg",
+    width: 575,
+    height: 1280,
+    sender: "Anna",
+    alt: "Seven PKA members wearing navy PKA camp shirts smiling barefoot together on the beach",
+  },
+  {
     src: "/memories/oscar-04.jpg",
     width: 1080,
     height: 808,
     sender: "Oscar Chai",
     alt: "Large PKA group photo smiling together on stage at USM's 46th Kung Fu Night",
+  },
+  {
+    src: "/memories/chinese-cg-03.jpg",
+    width: 1080,
+    height: 720,
+    sender: "Chinese CG",
+    alt: "Smiling portrait flashing a peace sign in front of a festive wall of Christmas ornaments",
   },
   {
     src: "/memories/eunice-01.jpg",
