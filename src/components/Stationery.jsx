@@ -71,7 +71,7 @@ export function KeepsakeFooter() {
         “In all your ways submit to him, and he will make your paths straight.” — Proverbs 3:6
       </p>
       <p className="footer-credit">
-        With Agape love &amp; prayers · <span lang="ms">Persaudaraan Kristian Agape</span> (PKA), USM · Class of 2026
+        With Love &amp; Prayers · <span lang="ms">Persaudaraan Kristian Agape</span> (PKA), USM · Class of 2026
       </p>
     </footer>
   );
@@ -87,7 +87,21 @@ export function Envelope({ name, opening = false }) {
       <div className="envelope" data-opening={opening}>
         <div className="envelope-back" />
         <div className="envelope-letter">
-          <span className="envelope-letter-cross">✝</span>
+          <svg
+            className="envelope-letter-cross"
+            width="11"
+            height="14"
+            viewBox="0 0 11 14"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M5.5 1V13M2 4.75H9"
+              stroke="currentColor"
+              strokeWidth="1.45"
+              strokeLinecap="round"
+            />
+          </svg>
           <span className="envelope-letter-label">{name ? `For ${name}` : "PKA · Class of 2026"}</span>
         </div>
         <div className="envelope-pocket" />

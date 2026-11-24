@@ -195,9 +195,9 @@ body {
 }
 
 .envelope-letter-cross {
+  display: block;
   color: var(--crimson);
-  font-size: 0.82em;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
 .envelope-letter-label {
@@ -207,10 +207,12 @@ body {
 
 .envelope-pocket {
   z-index: 2;
+  clip-path: polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%);
   background:
     radial-gradient(#ffffff12 0.45px, transparent 0.85px) 0 0 / 4px 4px,
     linear-gradient(146deg, transparent 49.6%, #0c0b0e 50%, #1e1b21 50.4%, transparent 76%),
-    linear-gradient(214deg, transparent 49.6%, #0b0a0d 50%, #262229 50.4%, #18161a 80%);
+    linear-gradient(214deg, transparent 49.6%, #0b0a0d 50%, #262229 50.4%, #18161a 80%),
+    #1a181d;
 }
 
 .envelope-flap {
