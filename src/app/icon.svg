@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#FAF7F3"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="11.5" fill="none" stroke="#DDD3C9" stroke-width="1.5"/>
+  <!-- Cross rising from the Agape heart -->
+  <path d="M35.5 11.5 L31.2 28.5 M27.5 17.5 L40.5 19.8" stroke="#121113" stroke-width="4.2" stroke-linecap="round"/>
+  <!-- Brushed Agape crimson heart -->
+  <path d="M31.5 29.2 C28.5 21.5 16 21.5 16 32 C16 42.5 26 46.8 29.8 53.5 C34.5 46.2 48 41.8 48 32.2 C48 23.8 38.2 22.8 34.5 28.5" fill="none" stroke="#D0191A" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
