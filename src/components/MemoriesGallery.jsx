@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CrossFiligree } from "./Stationery";
 
-export function MemoriesGallery({ photos, videos = [], driveLinks = [] }) {
+export function MemoriesGallery({ photos, videos = [] }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const dialogRef = useRef(null);
   const activePhoto = activeIndex !== null ? photos[activeIndex] : null;
@@ -122,22 +122,6 @@ export function MemoriesGallery({ photos, videos = [], driveLinks = [] }) {
             </figure>
           ))}
         </div>
-      )}
-
-      {driveLinks.length > 0 && (
-        <details className="memories">
-          <summary>Original Google Drive Links</summary>
-          <ul>
-            {driveLinks.map(({ sender, url }, index) => (
-              <li key={index}>
-                <a href={url} target="_blank" rel="noreferrer">
-                  Open original upload from {sender}{" "}
-                  <span className="sr-only">(opens in a new tab)</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </details>
       )}
 
       <dialog

@@ -758,96 +758,6 @@ body {
   gap: 0.75rem;
 }
 
-/* Shared PKA Group Memories Accordion */
-.memories {
-  margin-top: 1.75rem;
-  border-block: 1px solid var(--rule);
-}
-
-.memories summary {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  min-block-size: 3.1rem;
-  padding-block: 0.9rem;
-  font-weight: 650;
-  color: var(--ink);
-  list-style: none;
-}
-
-.memories summary::-webkit-details-marker {
-  display: none;
-}
-
-.memories summary::before {
-  content: "";
-  inline-size: 1em;
-  block-size: 1em;
-  flex-shrink: 0;
-  background-color: var(--crimson-ink);
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 5.75L8 10.25l4.5-4.5' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
-  rotate: -90deg;
-}
-
-.memories[open] > summary::before {
-  rotate: 0deg;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .memories summary::before {
-    transition: rotate 200ms ease;
-  }
-}
-
-.memories::details-content {
-  interpolate-size: allow-keywords;
-  overflow: clip;
-  contain: layout;
-}
-
-.memories:not([open])::details-content {
-  block-size: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .memories::details-content {
-    transition: block-size, content-visibility, display;
-    transition-duration: 280ms;
-    transition-timing-function: ease-in-out;
-    transition-behavior: allow-discrete;
-  }
-}
-
-.memories ul {
-  margin: 0;
-  padding: 0 0 1.25rem 1.65rem;
-  display: grid;
-  justify-items: start;
-  gap: 0.6rem;
-}
-
-.memories a {
-  display: inline-flex;
-  align-items: center;
-  min-block-size: 2rem;
-  color: var(--crimson-ink);
-  font-weight: 550;
-  text-decoration: underline;
-  text-underline-offset: 0.24em;
-  transition: color 150ms ease;
-}
-
-.memories a:hover {
-  color: var(--ink);
-}
-
-@media (pointer: coarse) {
-  .memories a {
-    min-block-size: 2.75rem;
-  }
-}
-
 @media (max-width: 35rem) {
   .envelope-scene {
     padding-top: 2.75rem;
@@ -870,10 +780,6 @@ body {
   .video-card,
   .photo-lightbox {
     border: 1px solid CanvasText;
-  }
-
-  .memories summary::before {
-    background-color: CanvasText;
   }
 
   :where(button, summary, a):focus-visible {

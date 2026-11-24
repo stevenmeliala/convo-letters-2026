@@ -45,11 +45,7 @@ export default async function GraduateCard({ params }) {
           ))}
         </div>
         {showMemories && (
-          <MemoriesGallery
-            photos={MEMORY_PHOTOS}
-            videos={MEMORY_VIDEOS}
-            driveLinks={dataset.memories}
-          />
+          <MemoriesGallery photos={MEMORY_PHOTOS} videos={MEMORY_VIDEOS} />
         )}
       </CardReveal>
       <KeepsakeFooter />
