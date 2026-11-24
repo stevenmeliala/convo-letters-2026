@@ -1,3 +1,5 @@
+export const MEMORIES_EXCLUDED_SLUGS = new Set(["ling-hui", "tian-kuan", "joseph-ng"]);
+
 export const MEMORY_PHOTOS = [
   {
     src: "/memories/oscar-01.jpg",
