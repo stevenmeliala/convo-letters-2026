@@ -21,6 +21,7 @@ GRADUATES = {
 }
 SENDER_HEADER = "Your name or some random alias if you want to stay anonymous🗿"
 MEMORY_HEADER = "Leave any of your favourite memories or pictures with our graduating seniors here!"
+SENDER_CORRECTIONS = {"Eunce": "Eunice"}
 
 
 def text(element):
@@ -78,6 +79,7 @@ def extract(workbook):
 
     for row_number, values in rows:
         sender = values.get("B", "")
+        sender = SENDER_CORRECTIONS.get(sender, sender)
         for slug, column in message_columns.items():
             message = values.get(column, "")
             if message.strip():
