@@ -93,10 +93,10 @@ export function CardReveal({ name, children }) {
           </p>
           <figure className="blessing-verse">
             <blockquote>
-              “The Lord bless you and keep you; the Lord make his face to shine upon you and be
-              gracious to you; the Lord lift up his countenance upon you and give you peace.”
+              “Trust in the Lord with all your heart, and do not lean on your own understanding. In
+              all your ways acknowledge him, and he will make straight your paths.”
             </blockquote>
-            <figcaption>Numbers 6:24–26 (ESV)</figcaption>
+            <figcaption>Proverbs 3:5–6 (ESV)</figcaption>
           </figure>
         </header>
         {children}
